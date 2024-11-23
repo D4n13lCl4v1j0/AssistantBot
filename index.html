@@ -1,42 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PC Parts Store</title>
+  <title>Tienda de Componentes de PC</title>
   <style>
+    /* Estilos globales */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
     }
+
+    /* Encabezado */
     header {
-      background-color: #333;
+      background-color: #ff6600;
       color: #fff;
       padding: 1rem 0;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    /* Contenedor principal */
     main {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       background: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    h1, h2 {
+    h2 {
       color: #333;
     }
-    ul {
-      list-style: none;
+
+    /* Lista de productos */
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
       padding: 0;
+      list-style: none;
     }
-    li {
+    .producto {
       background: #f9f9f9;
-      margin: 0.5rem 0;
-      padding: 0.5rem;
       border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+    .producto img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+    .producto strong {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-block;
+      background-color: #ff6600;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #e65c00;
+    }
+
+    /* Pie de página */
     footer {
       text-align: center;
       margin-top: 2rem;
@@ -44,48 +92,111 @@
       background-color: #333;
       color: #fff;
     }
+
+    /* Chatbot */
     #chatbot-container {
       position: fixed;
       bottom: 20px;
       right: 20px;
       z-index: 1000;
     }
+
+    /* Media Queries para pantallas pequeñas */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      main {
+        padding: 1rem;
+      }
+      .productos {
+        grid-template-columns: 1fr;
+      }
+      .producto {
+        padding: 0.8rem;
+      }
+      .btn {
+        padding: 0.4rem 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+      header p {
+        font-size: 0.9rem;
+      }
+      .producto {
+        padding: 0.6rem;
+      }
+      .btn {
+        padding: 0.3rem 0.6rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>PC Parts Store</h1>
-    <p>Find the best parts for your dream PC build!</p>
+    <h1>Tienda de Componentes de PC</h1>
+    <p>Encuentra las mejores ofertas en tecnología</p>
   </header>
+  
   <main>
-    <h2>Available Products</h2>
-    <ul>
-      <li><strong>Graphics Card:</strong> NVIDIA RTX 4080</li>
-      <li><strong>Processor:</strong> AMD Ryzen 9 7950X</li>
-      <li><strong>Motherboard:</strong> ASUS ROG STRIX B650</li>
-      <li><strong>Memory:</strong> Corsair Vengeance 32GB DDR5</li>
-      <li><strong>Storage:</strong> Samsung 980 Pro 1TB SSD</li>
+    <h2>Productos Disponibles</h2>
+    <ul class="productos">
+      <li class="producto">
+        <img src="https://via.placeholder.com/250" alt="Tarjeta Gráfica">
+        <strong>Tarjeta Gráfica:</strong> NVIDIA RTX 4080
+        <a href="#" class="btn">Ver más</a>
+      </li>
+      <li class="producto">
+        <img src="https://via.placeholder.com/250" alt="Procesador">
+        <strong>Procesador:</strong> AMD Ryzen 9 7950X
+        <a href="#" class="btn">Ver más</a>
+      </li>
+      <li class="producto">
+        <img src="https://via.placeholder.com/250" alt="Placa Base">
+        <strong>Placa Base:</strong> ASUS ROG STRIX B650
+        <a href="#" class="btn">Ver más</a>
+      </li>
+      <li class="producto">
+        <img src="https://via.placeholder.com/250" alt="Memoria RAM">
+        <strong>Memoria RAM:</strong> Corsair Vengeance 32GB DDR5
+        <a href="#" class="btn">Ver más</a>
+      </li>
+      <li class="producto">
+        <img src="https://via.placeholder.com/250" alt="Almacenamiento">
+        <strong>Almacenamiento:</strong> Samsung 980 Pro 1TB SSD
+        <a href="#" class="btn">Ver más</a>
+      </li>
     </ul>
   </main>
+
   <footer>
-    <p>&copy; 2024 PC Parts Store. All rights reserved.</p>
+    <p>&copy; 2024 Tienda de Componentes de PC. Todos los derechos reservados.</p>
   </footer>
 
   <!-- Chatbot Container -->
   <div id="chatbot-container"></div>
 
-<script>
-  window.watsonAssistantChatOptions = {
-    integrationID: "4c234188-1bb7-454e-945e-c7d9ef39af27", // The ID of this integration.
-    region: "au-syd", // The region your integration is hosted in.
-    serviceInstanceID: "17704814-d5e0-49a0-8c0c-48db80e08826", // The ID of your service instance.
-    onLoad: async (instance) => { await instance.render(); }
-  };
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-    document.head.appendChild(t);
-  });
-</script>
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "4c234188-1bb7-454e-945e-c7d9ef39af27",
+      region: "au-syd",
+      serviceInstanceID: "17704814-d5e0-49a0-8c0c-48db80e08826",
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t = document.createElement('script');
+      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+              (window.watsonAssistantChatOptions.clientVersion || 'latest') + 
+              "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
 </body>
 </html>
