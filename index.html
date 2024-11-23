@@ -74,19 +74,18 @@
   <!-- Chatbot Container -->
   <div id="chatbot-container"></div>
 
-  <!-- Watson Assistant Script -->
-  <script>
-    window.watsonAssistantChatOptions = {
-      integrationID: "Z9Jw9KO6hbnHFItJzeY9fQLBit9XZPvofQMo-SBxEdne", // Assistant ID de tu chatbot
-      region: "au-syd", // Región de tu instancia (extraída de la URL)
-      serviceInstanceID: "https://api.au-syd.assistant.watson.cloud.ibm.com/instances/17704814-d58e-49a9-8c0c-48dbec1ec47f", // Service instance URL
-      onLoad: function(instance) { instance.render(); }
-    };
-    setTimeout(function(){
-      const t = document.createElement('script');
-      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/latest/WatsonAssistantChatEntry.js";
-      document.head.appendChild(t);
-    });
-  </script>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "4c234188-1bb7-454e-945e-c7d9ef39af27", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "17704814-d5e0-49a0-8c0c-48db80e08826", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
 </body>
 </html>
